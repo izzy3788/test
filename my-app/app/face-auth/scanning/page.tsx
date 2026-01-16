@@ -1,11 +1,25 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import Lottie from "lottie-react";
 import faceCaptureAnimation from "@/lottie/face_capture.json";
 
 export default function UserTypeSelect() {
+  const [count, setCount] = useState(3);
+  const [countdownFinished, setCountdownFinished] = useState(false);
+
+  useEffect(() => {
+    if (count > 0) {
+      const timer = setTimeout(() => setCount(count - 1), 1000);
+      return () => clearTimeout(timer);
+    } else {
+      const finishTimer = setTimeout(() => setCountdownFinished(true), 0);
+      return () => clearTimeout(finishTimer);
+    }
+  }, [count]);
+
   return (
     <div className="relative flex min-h-screen flex-col items-center bg-[#2A2E35]">
       <Button
@@ -31,6 +45,14 @@ export default function UserTypeSelect() {
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="h-75 w-75 rounded-full border-2 border-white/70" />
           </div>
+
+          {!countdownFinished && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-[64px] font-bold text-white drop-shadow-lg">
+                {count}
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
