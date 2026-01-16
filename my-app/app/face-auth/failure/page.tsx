@@ -31,11 +31,11 @@ export default function UserTypeSelect() {
       <ButtonGroup className="w-full">
         <Button
           size="lg"
-          className="bg-[#474F5D] text-white w-1/2 hover:bg-[#3C434E]"
+          className="w-1/2 rounded-none! bg-[#474F5D] text-white hover:bg-[#3C434E]"
         >
           나가기
         </Button>
-        <Button size="lg" className="w-1/2">
+        <Button size="lg" className="w-1/2 rounded-none!">
           재촬영하기
         </Button>
       </ButtonGroup>
