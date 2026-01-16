@@ -48,7 +48,7 @@ export default function UserTypeSelect() {
 
           {!countdownFinished && (
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[64px] font-bold text-white drop-shadow-lg">
+              <span className="text-[80px] font-semibold text-white drop-shadow-lg">
                 {count}
               </span>
             </div>
@@ -60,7 +60,7 @@ export default function UserTypeSelect() {
         <h2 className="text-[18px] font-bold text-[#D7DBE0]">
           얼굴인식 준비중
         </h2>
-        <span className="text-[56px] font-bold text-white">54%</span>
+        <span className="text-[52px] font-bold text-white">0%</span>
       </div>
     </div>
   );
