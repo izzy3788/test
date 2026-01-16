@@ -106,7 +106,7 @@ export default function UserTypeSelect() {
       </div>
 
       {/* 하단 버튼 */}
-      <Button size="lg" disabled={!userType} className="w-full rounded-none">
+      <Button size="lg" disabled={!userType}>
         다음
       </Button>
     </div>
