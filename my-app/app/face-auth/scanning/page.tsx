@@ -1,28 +1,45 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { X } from "lucide-react";
 import Lottie from "lottie-react";
-import faceScanAnimation from "@/lottie/face-scan.json";
+import faceCaptureAnimation from "@/lottie/face_capture.json";
 
 export default function UserTypeSelect() {
   return (
-    <div className="flex min-h-screen flex-col items-center bg-[#3C434E] pt-6">
-      <div className="flex flex-1 flex-col justify-center mb-10">
-        <div className="flex justify-center mb-6">
-          <Lottie animationData={faceScanAnimation} loop={true} />
-        </div>
-        <h1 className="text-center text-[32px] font-bold text-[#FFFFFF]">
+    <div className="relative flex min-h-screen flex-col items-center bg-[#2A2E35]">
+      <Button
+        variant="outline"
+        size="icon"
+        aria-label="Go Back"
+        className="absolute right-5 top-5 z-50 h-10 w-10 border-0 bg-[#474F5D] text-white hover:bg-[#6C7A8B] hover:text-white"
+      >
+        <X className="size-6" />
+      </Button>
+
+      <div className="flex flex-1 flex-col items-center justify-center">
+        <h1 className="text-center text-[32px] font-bold text-white -mb-20">
           정면을 응시해 주세요.
         </h1>
-        <span className="mt-2 text-center text-[16px] text-[#474F5D]">
-          얼굴 인증에 실패하였습니다.
-          <br />
-          재촬영 하시거나 아래의 보조 인증을 진행해 주세요.
-        </span>
+
+        <div className="relative h-150 w-150">
+          <Lottie
+            animationData={faceCaptureAnimation}
+            loop
+            className="h-full w-full"
+          />
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="h-75 w-75 rounded-full border-2 border-white/70" />
+          </div>
+        </div>
       </div>
-      <Button variant="link" className="text-[#474F5D] mb-4 text-[18px]">
-        계속 인증에 실패하신다면?
-        <ChevronRight className="size-4.5 text-[#474F5D]" />
-      </Button>
+
+      <div className="absolute bottom-10 flex w-full flex-col items-center gap-2">
+        <h2 className="text-[18px] font-bold text-[#D7DBE0]">
+          얼굴인식 준비중
+        </h2>
+        <span className="text-[56px] font-bold text-white">54%</span>
+      </div>
     </div>
   );
 }
