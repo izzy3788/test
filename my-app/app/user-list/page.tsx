@@ -17,7 +17,7 @@ const users = [
 export default function UserTypeSelect() {
   return (
     <div className="min-h-screen bg-[#EDEEF1]">
-      {/* 상단 영역 */}
+      {/* 헤더 및 검색창 */}
       <div className="flex flex-col items-center gap-6">
         <h1 className="text-[#2B2C36] text-[24px] font-bold text-center mt-18 -mb-2">
           사용자 이름을 검색해 주세요
@@ -63,7 +63,6 @@ export default function UserTypeSelect() {
         </div>
       </div>
 
-      {/* 하단 고정 버튼 */}
       <Button
         size="lg"
         className="
