@@ -38,7 +38,7 @@ export default function PasswordPage() {
                 <div
                   key={index}
                   className={`
-                    h-25 w-20 rounded-[8px]
+                    h-25 w-20 rounded-lg
                     flex items-center justify-center
                     text-white text-2xl font-bold
                     ${

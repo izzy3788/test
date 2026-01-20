@@ -1,7 +1,12 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
+import {
+  InputGroup,
+  InputGroupInput,
+  InputGroupAddon,
+} from "@/components/ui/input-group";
 import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Image from "next/image";
@@ -23,7 +28,12 @@ export default function UserTypeSelect() {
           사용자 이름을 검색해 주세요
         </h1>
 
-        <Input type="text" placeholder="사용자 이름 검색" className="w-90" />
+        <InputGroup className="w-120">
+          <InputGroupInput placeholder="Search..." />
+          <InputGroupAddon>
+            <Search />
+          </InputGroupAddon>
+        </InputGroup>
       </div>
 
       {/* 유저 리스트 */}
